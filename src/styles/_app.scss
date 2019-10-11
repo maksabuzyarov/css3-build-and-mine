@@ -29,6 +29,19 @@ body {
 }
 
 $planeMode: false;
+$cubeMaterials: (
+    grass,
+    wood,
+    tree,
+    tnt,
+    stone,
+    sand,
+    pumpkin,
+    ice,
+    dirt,
+    chest,
+    oven
+);
 
 .cube {
     position: absolute;
@@ -59,9 +72,11 @@ $planeMode: false;
         }
     }
 
-    &_material_grass {
-        .cube__side {
-            background-image: url("../img/materials/cube/grass.png");
+    @each $material in $cubeMaterials {
+        &_material_#{$material} {
+            .cube__side {
+                background-image: url("../img/materials/cube/#{$material}.png");
+            }
         }
     }
 
@@ -79,7 +94,7 @@ $planeMode: false;
         transform: translate3d(0em, 0em, 0em);
 
         &:before {
-            //display: none;
+            display: none;
             font-size: 0.8em;
             color: #fff;
             font-weight: 900;
@@ -199,6 +214,7 @@ $planeMode: false;
 
     &__line {
         display: inline-flex;
+        flex-wrap: wrap;
         justify-content: center;
     }
 

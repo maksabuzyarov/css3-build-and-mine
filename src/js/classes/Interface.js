@@ -6,7 +6,7 @@ import game from '../config';
 class Interface {
 
   constructor() {
-    this.size = 6;
+    this.size = 10;
     this.$element = this.createElement();
 
     $(document.body).append(this.$element);
