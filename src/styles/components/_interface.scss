@@ -1,0 +1,62 @@
+// -------------------------------------
+//   .interface
+// -------------------------------------
+
+.interface {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+
+    line-height: 0;
+    text-align: center;
+
+    &__line {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &-card {
+        position: relative;
+        z-index: 1;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+
+        cursor: pointer;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            z-index: -1;
+
+            box-shadow: 0 0 0 2px rgba(#000, 0.3), inset 2px 2px 0 0 #eee,
+            inset -2px 0 0 0 #aaa, inset 0 0 0 5px #ccc, inset 7px 8px 0 0 #aaa,
+            inset -7px -7px 0 0 #ececec, inset 0 0 0 10px rgba(#000, 0.1);
+
+            opacity: 0.6;
+        }
+
+        transform-origin: center bottom;
+
+        &.is-active {
+            z-index: 2;
+
+            transform: scale(1.07);
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}

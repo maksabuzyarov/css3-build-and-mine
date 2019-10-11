@@ -1,0 +1,159 @@
+// -------------------------------------
+//   .cube
+// -------------------------------------
+
+$cubePlaneMode: false !default;
+$cubeMaterials: () !default;
+
+.cube {
+    position: absolute;
+
+    width: 1em;
+    height: 1em;
+
+    font-size: 100px;
+
+    transform-style: preserve-3d;
+    transform: translate3d(0em, 0em, 0em);
+
+    &.is-active {
+
+        .cube__side:after {
+            border-color: red;
+        }
+    }
+
+    // When the cube is in the card
+    &_in-card {
+        font-size: 18px;
+        transform: translate3d(-0.42em, 0.1em, 0) rotateX(-30deg) rotateY(-45deg) !important;
+    }
+
+    // A translucent copy of the cube that is shown before placement
+    &_ghost {
+        .cube__side {
+            opacity: 0.3;
+        }
+    }
+
+    @each $material in $cubeMaterials {
+        &_material_#{$material} {
+            .cube__side {
+                background-image: url("../img/materials/cube/#{$material}.png");
+            }
+        }
+    }
+
+    &__side {
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        line-height: 0.7em;
+        text-align: center;
+
+        background: rgba(red, 1) 0 0 / 4em auto no-repeat;
+
+        transform: translate3d(0em, 0em, 0em);
+
+        &:before {
+            display: none;
+            font-size: 0.8em;
+            color: #fff;
+            font-weight: 900;
+            vertical-align: middle;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            border: 1px solid rgba(#000, 0.2);
+        }
+
+        &_f {
+            background-position: -1em -1em;
+
+            &:before {
+                content: "F";
+            }
+        }
+
+        &_u {
+            background-position: -1em 0;
+
+            @if $cubePlaneMode {
+                transform: translate3d(0, -1em, 0);
+            } @else {
+                transform: translate3d(0, -.5em, -.5em) rotateX(90deg);
+            }
+
+            &:before {
+                content: "U";
+            }
+        }
+
+        &_d {
+            background-position: -1em -2em;
+
+            @if $cubePlaneMode {
+                transform: translate3d(0, 1em, 0);
+            } @else {
+                transform: translate3d(0, .5em, -.5em) rotateX(-90deg);
+            }
+
+            &:before {
+                content: "D";
+            }
+        }
+
+        &_b {
+            background-position: -3em -1em;
+
+            @if $cubePlaneMode {
+                transform: translate3d(2em, 0, 0);
+            } @else {
+                transform: translate3d(0, 0, -1em) rotateY(180deg);
+            }
+
+            &:before {
+                content: "B";
+            }
+        }
+
+        &_l {
+            background-position: 0 -1em;
+
+            @if $cubePlaneMode {
+                transform: translate3d(-1em, 0, 0);
+            } @else {
+                transform: translate3d(-.5em, 0, -.5em) rotateY(-90deg);
+            }
+
+            &:before {
+                content: "L";
+            }
+        }
+
+        &_r {
+            background-position: -2em -1em;
+
+            @if $cubePlaneMode {
+                transform: translate3d(1em, 0, 0);
+            } @else {
+                transform: translate3d(.5em, 0, -.5em) rotateY(90deg);
+            }
+
+            &:before {
+                content: "R";
+            }
+        }
+    }
+}
+
