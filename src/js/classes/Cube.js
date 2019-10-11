@@ -52,6 +52,29 @@ class Cube {
       this.$element.removeClass('cube_ghost');
     }
   }
+
+  static calcPositionForNew(pos, sideKey) {
+    let offset = {
+      x: 0,
+      y: 0,
+      z: 0,
+    };
+
+    switch(sideKey) {
+      case 'F': offset.z = 1; break;
+      case 'B': offset.z = -1; break;
+      case 'U': offset.y = -1; break;
+      case 'D': offset.y = 1; break;
+      case 'L': offset.x = -1; break;
+      case 'R': offset.x = 1; break;
+    }
+
+    return {
+      x: pos.x + offset.x,
+      y: pos.y + offset.y,
+      z: pos.z + offset.z,
+    };
+  }
 }
 
 export default Cube;

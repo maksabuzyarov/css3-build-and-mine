@@ -50,7 +50,7 @@ $planeMode: false;
 
     &_in-card {
         font-size: 18px;
-        transform: translate3d(-0.42em, 0.1em, 0) rotateX(-30deg) rotateY(-45deg);
+        transform: translate3d(-0.42em, 0.1em, 0) rotateX(-30deg) rotateY(-45deg) !important;
     }
 
     &_ghost {
