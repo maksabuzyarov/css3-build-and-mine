@@ -56,7 +56,7 @@ $(document.body).on('mousemove', '.js-cube-side', function () {
     let cubeData = $cube[0]._data;
     let sideKey = $side.data('side');
 
-    if (!cubeData.ghost()) {
+    if (!cubeData.isGhost) {
       if (ghostCube !== null) {
         game.world.remove(ghostCube);
       }
@@ -64,7 +64,7 @@ $(document.body).on('mousemove', '.js-cube-side', function () {
       let newPos = Cube.calcPositionForNew(cubeData.pos, sideKey);
 
       ghostCube = new Cube(newPos.x, newPos.y, newPos.z, game.currentTool.kind);
-      ghostCube.ghost(true);
+      ghostCube.setGhost(true);
       game.world.add(ghostCube);
     }
   }
@@ -82,7 +82,7 @@ $(document.body).on('mouseleave', '.js-cube', function () {
 
   if (game.currentTool.type === 'remove') {
     cubeData.$element.removeClass('is-active');
-  } else if (cubeData.ghost()) {
+  } else if (cubeData.isGhost) {
     game.world.remove(ghostCube);
     ghostCube = null;
   }
@@ -94,8 +94,8 @@ $(document.body).on('click', '.js-cube', function() {
 
   if (event.which === 1) {
 
-    if (cubeData.ghost() && game.currentTool.type === 'block') {
-      ghostCube.ghost(false);
+    if (cubeData.isGhost && game.currentTool.type === 'block') {
+      ghostCube.setGhost(false);
       ghostCube = null;
     }
 

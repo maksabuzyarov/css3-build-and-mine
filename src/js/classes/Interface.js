@@ -37,7 +37,7 @@ class Interface {
       }
 
       let active = i === 0;
-      let $card = this.createCardElement({tool, active});
+      let $card = this.createCardElement({ tool, active });
 
       $line.append($card);
     }
@@ -51,7 +51,7 @@ class Interface {
    * @param active
    * @returns {jQuery.fn.init|*|jQuery|HTMLElement}
    */
-  createCardElement({tool, active}) {
+  createCardElement({ tool, active }) {
     let template = `<div class="interface-card js-interface-card"></div>`;
     let $element = $(template);
 
@@ -64,7 +64,7 @@ class Interface {
 
       if (tool.type === 'block') {
         let cubeTemplate = `
-        <div class="cube cube_in-card cube_material_${tool.kind}">
+        <div class="cube cube_in-card cube_material_${ tool.kind }">
           <div class="cube__side cube__side_f" data-side="F"></div>
           <div class="cube__side cube__side_u" data-side="U"></div>
           <div class="cube__side cube__side_b" data-side="B"></div>
@@ -86,7 +86,7 @@ class Interface {
    */
   initEvents() {
 
-    $(document.body).on('click', '.js-interface-card', function() {
+    $(document.body).on('click', '.js-interface-card', function () {
       let $card = $(this);
       let toolID = $card.data('tool');
 
