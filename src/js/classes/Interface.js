@@ -65,12 +65,14 @@ class Interface {
       if (tool.type === 'block') {
         let cubeTemplate = `
         <div class="cube cube_in-card cube_material_${ tool.kind }">
-          <div class="cube__side cube__side_f" data-side="F"></div>
-          <div class="cube__side cube__side_u" data-side="U"></div>
-          <div class="cube__side cube__side_b" data-side="B"></div>
-          <div class="cube__side cube__side_d" data-side="D"></div>
-          <div class="cube__side cube__side_l" data-side="L"></div>
-          <div class="cube__side cube__side_r" data-side="R"></div>
+          <div class="cube__wrapper">
+            <div class="cube__side cube__side_f" data-side="F"></div>
+            <div class="cube__side cube__side_u" data-side="U"></div>
+            <div class="cube__side cube__side_b" data-side="B"></div>
+            <div class="cube__side cube__side_d" data-side="D"></div>
+            <div class="cube__side cube__side_l" data-side="L"></div>
+            <div class="cube__side cube__side_r" data-side="R"></div>
+          </div>
         </div>
       `;
 

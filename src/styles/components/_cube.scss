@@ -27,6 +27,10 @@ $cubeMaterials: () !default;
     &_in-card {
         font-size: 18px;
         transform: translate3d(-0.42em, 0.1em, 0) rotateX(-30deg) rotateY(-45deg) !important;
+
+        .cube__wrapper {
+            transform: none;
+        }
     }
 
     // A translucent copy of the cube that is shown before placement
@@ -42,6 +46,16 @@ $cubeMaterials: () !default;
                 background-image: url("../img/materials/cube/#{$material}.png");
             }
         }
+    }
+
+    &__wrapper {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        transform-style: preserve-3d;
+        transform: translate3d(-.5em, -.5em, .5em);
     }
 
     &__side {

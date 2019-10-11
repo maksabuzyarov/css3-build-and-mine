@@ -8,7 +8,7 @@ game.interface = new Interface();
 
 game.world = new World();
 game.world.rotate({x: 30, y: 30, z: 0});
-game.world.zoom = .15;
+game.world.zoom = 1;
 game.world.update();
 
 let ghostCube = null;

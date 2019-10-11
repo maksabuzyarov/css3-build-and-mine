@@ -52,7 +52,7 @@ class World {
    * @param rot object with 3d rotate data
    * @returns {{x: number, y: number, z: number}|*}
    */
-  rotate(rot) {
+  rotate(rot = null) {
 
     if (rot === null) {
       return this.rot;
