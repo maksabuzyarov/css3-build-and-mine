@@ -2,7 +2,6 @@
 //   .cube
 // -------------------------------------
 
-$cubePlaneMode: false !default;
 $cubeMaterials: () !default;
 
 .cube {
@@ -102,11 +101,7 @@ $cubeMaterials: () !default;
         &_u {
             background-position: -1em 0;
 
-            @if $cubePlaneMode {
-                transform: translate3d(0, -1em, 0);
-            } @else {
-                transform: translate3d(0, -.5em, -.5em) rotateX(90deg);
-            }
+            transform: translate3d(0, -.5em, -.5em) rotateX(-90deg);
 
             &:before {
                 content: "U";
@@ -116,11 +111,7 @@ $cubeMaterials: () !default;
         &_d {
             background-position: -1em -2em;
 
-            @if $cubePlaneMode {
-                transform: translate3d(0, 1em, 0);
-            } @else {
-                transform: translate3d(0, .5em, -.5em) rotateX(-90deg);
-            }
+            transform: translate3d(0, .5em, -.5em) rotateX(-90deg);
 
             &:before {
                 content: "D";
@@ -130,11 +121,7 @@ $cubeMaterials: () !default;
         &_b {
             background-position: -3em -1em;
 
-            @if $cubePlaneMode {
-                transform: translate3d(2em, 0, 0);
-            } @else {
-                transform: translate3d(0, 0, -1em) rotateY(180deg);
-            }
+            transform: translate3d(0, 0, -1em) rotateY(180deg);
 
             &:before {
                 content: "B";
@@ -144,11 +131,7 @@ $cubeMaterials: () !default;
         &_l {
             background-position: 0 -1em;
 
-            @if $cubePlaneMode {
-                transform: translate3d(-1em, 0, 0);
-            } @else {
-                transform: translate3d(-.5em, 0, -.5em) rotateY(-90deg);
-            }
+            transform: translate3d(-.5em, 0, -.5em) rotateY(-90deg);
 
             &:before {
                 content: "L";
@@ -158,14 +141,37 @@ $cubeMaterials: () !default;
         &_r {
             background-position: -2em -1em;
 
-            @if $cubePlaneMode {
-                transform: translate3d(1em, 0, 0);
-            } @else {
-                transform: translate3d(.5em, 0, -.5em) rotateY(90deg);
-            }
+            transform: translate3d(.5em, 0, -.5em) rotateY(90deg);
 
             &:before {
                 content: "R";
+            }
+        }
+    }
+
+    &_plane {
+
+        .cube__side {
+            transition: transform .75s ease;
+
+            &_u {
+                transform: translate3d(0, -1em, 0);
+            }
+
+            &_d {
+                transform: translate3d(0, 1em, 0);
+            }
+
+            &_b {
+                transform: translate3d(2em, 0, 0);
+            }
+
+            &_l {
+                transform: translate3d(-1em, 0, 0);
+            }
+
+            &_r {
+                transform: translate3d(1em, 0, 0);
             }
         }
     }

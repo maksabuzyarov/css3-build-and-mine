@@ -15,6 +15,7 @@ body {
     height: 100%;
 
     background: linear-gradient(to top, #5cc3ff, #1c92ea);
+    background: #292d3e;
 }
 
 .world {
@@ -25,6 +26,112 @@ body {
     perspective: 5700px;
 
     transform-style: preserve-3d;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    background: #292d3e;
+
+    &__cube-place {
+        margin-bottom: 200px;
+    }
+
+    &__cube {
+        font-size: 150px;
+    }
+
+    &-btn {
+        position: relative;
+
+        padding: 0;
+
+        font-size: 22px;
+        letter-spacing: .1em;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+
+        background: rgba(#fff, .02);
+        border: 2px solid #fff;
+
+        box-shadow: 1px 1px 0 1px rgba(#fff, .6);
+        transform: translate(0, 0);
+        transition: all .2s ease;
+
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+            background: transparent;
+        }
+
+        &.is-active {
+            background: transparent;
+
+            box-shadow: 0 0 0 rgba(#fff, 0);
+            transform: translate(0, 2px);
+
+            &:before {
+                transform: translateY(-100%);
+            }
+        }
+
+        &:before {
+            content: "";
+
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            right: -15px;
+            height: 100%;
+
+            opacity: 1;
+            background: rgba(#fff, .01);
+            box-shadow: 0 0 10px 0 rgba(#fff, .03);
+
+            transform: rotateZ(-2deg);
+            transition: transform .2s ease;
+        }
+
+        &__state {
+            display: block;
+
+            &_start {
+                color: #fff;
+            }
+
+            &_end {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+
+                width: 0;
+
+                background: #fff;
+                color: #333;
+
+                overflow: hidden;
+            }
+        }
+
+        &__value {
+            display: block;
+            padding: 15px 0;
+            width: 340px;
+        }
+    }
 }
 
 
