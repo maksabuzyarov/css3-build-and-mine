@@ -15,7 +15,6 @@ class Preloader {
       this.cubeSides[side.dataset.side] = $(side);
     });
 
-    this.initListener();
   }
 
   /**
@@ -83,17 +82,6 @@ class Preloader {
 
 
     timeline.play();
-  }
-
-  /**
-   * Listener for preload actions
-   */
-  initListener() {
-
-    this.$button.on('click', () => {
-      this.$button.addClass('is-active');
-      this.startLoad();
-    });
   }
 }
 

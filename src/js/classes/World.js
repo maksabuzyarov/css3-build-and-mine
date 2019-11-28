@@ -6,10 +6,11 @@ class World {
   constructor() {
     this.objects = [];
     this.rot = { x: 0, y: 0, z: 0 };
+    this.pos = { x: 0, y: 0, z: 0 };
     this.zoom = 1;
     this.$element = $('<div class="world" id="#world">');
 
-    $(document.body).append(this.$element);
+    $('#scene').append(this.$element);
   }
 
   /**
@@ -18,7 +19,7 @@ class World {
   update() {
     this.$element.css(
       'transform',
-      `scale(${ this.zoom }) rotateX(${ -this.rot.x }deg) rotateY(${ -this.rot.y }deg)`,
+      `translate3d(${ -this.pos.x }em, ${ -this.pos.y }em, ${ -this.pos.z }em) scale(${ this.zoom }) rotateX(${ -this.rot.x }deg) rotateY(${ -this.rot.y }deg)`,
     );
   }
 
@@ -59,6 +60,20 @@ class World {
     }
 
     this.rot = rot;
+  }
+
+  /**
+   * Get (if empty parameters) or Set position value
+   * @param pos object with 3d position data
+   * @returns {{x: number, y: number, z: number}|*}
+   */
+  position(pos = null) {
+
+    if (pos === null) {
+      return this.pos;
+    }
+
+    this.pos = pos;
   }
 
   /**

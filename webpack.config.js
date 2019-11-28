@@ -35,6 +35,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: require.resolve('zepto'),
+        use: 'imports-loader?this=>window'
+      }
     ],
   },
 };

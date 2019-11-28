@@ -16,14 +16,14 @@ body {
 
     background: linear-gradient(to top, #5cc3ff, #1c92ea);
     background: #292d3e;
+
+    perspective: 4000px;
 }
 
 .world {
     position: absolute;
     top: 50%;
     left: 50%;
-
-    perspective: 5700px;
 
     transform-style: preserve-3d;
 }

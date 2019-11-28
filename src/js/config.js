@@ -1,6 +1,6 @@
 const game = {
   currentTool: {},
-  interfaceTools: [0, 1, 2, 3, 4, 5, 6, 10, 11, 8],
+  interfaceTools: [1, 2, 3, 4, 5, 6, 10, 11, 9, 0],
   tools: [
     { 'id': 0, 'type': 'remove', 'kind': '', },
     { 'id': 1, 'type': 'block', 'kind': 'grass', },
