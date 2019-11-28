@@ -1,6 +1,10 @@
-<h1>CSS3. Build and Mine</h1>
+# CSS3. Build and Mine
 
 1. Clone
-2. Run: `npm i` and `gulp build`
-3. Open: `dist/index.html`
-4. Enjoy!
+1. Run: `npm i` and `gulp build`
+1. Open: `dist/index.html`
+1. Enjoy!
+
+### Preview
+
+![version](./docs/preview.jpg)
