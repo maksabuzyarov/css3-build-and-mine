@@ -11,7 +11,7 @@ import { paths } from '../gulpfile.babel';
 
 gulp.task('server', function(done) {
   browsersync.init({
-    server: './dist/',
+    server: paths.dist,
     port: 4000,
     notify: true
   });

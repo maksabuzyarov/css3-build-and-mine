@@ -24,11 +24,11 @@ gulp.task('images', function () {
         lossy: 2,
       }),
       imageminPngquant({
-        speed: 1,
+        speed: 5,
         quality: [0.8, 0.95],
       }),
       imageminZopfli({
-        more: true,
+        more: false,
       }),
       imageminMozjpeg({
         progressive: true,

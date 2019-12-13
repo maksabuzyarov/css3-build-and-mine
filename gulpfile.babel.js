@@ -8,33 +8,33 @@ const argv = yargs.argv;
 const production = !!argv.production;
 
 const paths = {
-  dist: './dist/',
+  dist: './docs/',
   views: {
     src: './src/views/templates/**/*.html',
     pages: './src/views/templates/',
     partials: './src/views/partials/',
     helpers: './src/views/helpers/',
     data: './src/views/data',
-    dist: './dist/',
+    dist: './docs/',
     watch: './src/views/**/*.html',
   },
   styles: {
     src: './src/styles/*.{scss,sass}',
-    dist: './dist/assets/styles/',
+    dist: './docs/assets/styles/',
     watch: './src/styles/**/*.{scss,sass}',
   },
   fonts: {
     src: './src/fonts/**/*.{woff,woff2,eot,ttf,svg}',
-    dist: './dist/assets/fonts/',
+    dist: './docs/assets/fonts/',
     watch: './src/fonts/**/*.{woff,woff2,eot,ttf,svg}',
   },
   favicons: {
     src: "./src/img/favicon/*.{jpg,jpeg,png,gif}",
-    dist: "./dist/assets/img/favicons/",
+    dist: "./docs/assets/img/favicons/",
   },
   sprites: {
     src: "./src/img/svg/*.svg",
-    dist: "./dist/assets/img/sprites/",
+    dist: "./docs/assets/img/sprites/",
     watch: "./src/img/svg/*.svg"
   },
   images: {
@@ -42,22 +42,22 @@ const paths = {
       './src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}',
       '!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff,svg}',
     ],
-    dist: './dist/assets/img/',
+    dist: './docs/assets/img/',
     watch: './src/img/**/*.{jpg,jpeg,png,gif,svg,tiff}',
   },
   scripts: {
     src: './src/js/main.js',
-    dist: './dist/assets/js/',
+    dist: './docs/assets/js/',
     srcOther: './src/js/other/*.js',
-    distOther: './dist/assets/js/other/',
+    distOther: './docs/assets/js/other/',
     watch: './src/js/**/*.js',
   },
   vendors: {
     src: './src/vendors/**/*.*',
-    dist: './dist/assets/vendors/'
+    dist: './docs/assets/vendors/'
   },
   assets: {
-    dist: './dist/assets/',
+    dist: './docs/assets/',
   },
 };
 
